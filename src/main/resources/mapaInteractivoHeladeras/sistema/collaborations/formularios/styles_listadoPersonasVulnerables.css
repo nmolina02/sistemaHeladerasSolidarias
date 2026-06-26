@@ -1,0 +1,117 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* El contenedor principal debe ocupar todo el espacio disponible */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenido principal debe expandirse para llenar el espacio disponible */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 1%;
+    background-color: #54cbff;
+    display: grid;
+    place-content: center;
+}
+
+.colaboration-section {
+    max-width: 1400px;
+    width: 95%;
+    background-color: rgb(218, 216, 216);
+    padding: 2%;
+    border-radius: 16px;
+    margin-inline: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.colaboration-section h1 {  
+    text-align: center;
+    margin-block: 28px;
+    color: #2b89f1;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header_table th, .header_table td {
+    background-color: #0e3969;
+    color: white;
+    padding: 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+th, td {
+    background-color: #0091b1a4;
+    color: white;
+    padding: 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Alternar colores de las filas en tbody */
+tbody tr:nth-child(odd) {
+    background-color: #00a5caa4; /* Color para filas impares */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0091b1a4; /* Color para filas pares */
+}
+
+.form-control {
+    margin-bottom: 10%;
+}
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 913px) {
+    .colaboration-section {
+        padding: 4%;
+    }
+
+    .colaboration-section h1 {
+        font-size: 2rem;
+    }
+
+    .form-control {
+        margin-bottom: 3%;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}

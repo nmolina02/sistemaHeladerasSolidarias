@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="shortcut icon" href="../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_datosRestantes.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a><img src="../images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="create-account-section" id="create-account-section">
+            <button class="close-button" id="back_button">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            
+            <h1>Cargar Datos Restantes para el Registro</h1>
+            <form>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="user_type_input" class="form-label" id="user_type_field">Seleccione el tipo de Usuario</label>
+                        <select class="form-control" id="user_type_input" required>
+                            <option value="0">Seleccione</option>
+                            <option value="Persona Humana">Persona Humana</option>
+                            <option value="Persona Jurídica">Persona Jurídica</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4" id="organizationType" style="display: none;">
+                        <label for="organization_type_input" class="form-label" id="organization_type_field">Tipo de Organización</label>
+                        <select class="form-control" id="organization_type_input">
+                            <option value="0">Seleccione</option>
+                            <option value="Gubernamental">Gubernamental</option>
+                            <option value="ONG">ONG</option>
+                            <option value="Empresa">Empresa</option>
+                            <option value="Institucion">Institución</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4" id="rubro" style="display: none;">
+                        <label for="rubro_input" class="form-label" id="rubro_field">Rubro</label>
+                        <input type="text" class="form-control" id="rubro_input" placeholder="Rubro">
+                    </div>
+
+                    <div class="col-md-4" id="cuit" style="display: none;">
+                        <label for="cuit_input" class="form-label" id="rubro_field">Cuit</label>
+                        <input type="number" class="form-control" id="cuit_input" placeholder="Cuit">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2" id="dni_type" style="display: none;">
+                        <label for="dni_type_input" class="form-label" id="dni_type_field">Tipo de Documentación</label>
+                        <select class="form-control" id="dni_type_input">
+                            <option value="0">Seleccione</option>
+                            <option value="DNI">DNI</option>
+                            <option value="LC">Libreta Cívica</option>
+                            <option value="LE">Libreta de Enrolamiento</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2" id="dni" style="display: none;">
+                        <label for="dni_input" class="form-label" id="dni_field">Número de Documento</label>
+                        <input type="number" class="form-control" id="dni_input" placeholder="Documento">
+                    </div>
+
+                    <div class="col-md-2" id="birthdate" style="display: none;">
+                        <label for="birthday_input" class="form-label" id="birthday_field">Nacimiento</label>
+                        <input type="date" class="form-control" id="birthday_input">
+                    </div>
+
+                    <div class="col-md-6" id="domicilio" style="display: none;">
+                        <label for="address_input" class="form-label" id="address_field">Domicilio</label>
+                        <input type="text" class="form-control" id="address_input" placeholder="Ingrese: Calle Altura, Ciudad, País">
+                    </div>
+                </div>
+            </form>
+            <button id="create_account_button" class="btn btn-primary" type="submit" disabled>Cargar datos</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts_datosRestantes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

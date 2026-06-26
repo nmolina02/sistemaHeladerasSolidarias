@@ -1,0 +1,9 @@
+<configuration>
+    <!-- Desactivar todos los logs de Jetty -->
+    <logger name="org.eclipse.jetty" level="OFF" />
+
+    <!-- Configuración global opcional -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

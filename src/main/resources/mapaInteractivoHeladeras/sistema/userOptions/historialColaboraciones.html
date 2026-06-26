@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Colaboraciones</title>
+    <link rel="shortcut icon" href="../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_historialColaboraciones.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html" id="main_icon"><img src="../images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+            </button>
+
+            <!-- Boton de perfil -->
+            <div class="nav-right">
+                <div class="dropdown-container_1">
+                    <a href="#" id="user_circle" class="custom-btn btn">
+                        <div class="text-container-user-profile">
+                            <span class="text-user-profile" id="profile_name">Usuario</span>
+                            <span class="text-user-profile" id="profile_name_2">Usuario</span>
+                            <span class="text-user-profile" id="profile_points">0 puntos</span>
+                            <span class="text-user-profile" id="profile_points_2">0 puntos</span>
+                        </div>
+                        <div class="profile-pic">
+                            <img id="profile_pic" src="../images/users_images/imagen_registro.png" alt="Foto de Perfil">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu_1 profile-dropdown" id="profile_options">
+                        <a href="myProfile.html">
+                            <span>Mi Perfil</span>
+                        </a>
+                        <a href="premios.html" id="colaborator_action_1">
+                            <span>Canjear Productos</span>
+                        </a>
+                        <a href="#" id="tarjetaSolicitada">
+                            <span>Solicitar tarjeta</span>
+                        </a>
+                        <a href="../userOptions/historialColaboraciones.html" id="misColaboraciones">
+                            <span>Mis Colaboraciones</span>
+                        </a>
+                        <a href="../userOptions/configAccount.html">
+                            <span>Configuración</span>
+                        </a>
+                        <a href="#">
+                            <span>Ayuda</span>
+                        </a>
+                        <a href="#" id="logout_button">
+                            <span>Cerrar Sesión</span>
+                        </a>
+                        <a href="#" id="change_rol" style="display: none;">
+                            <span>Cambiar a Rol</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="../index.html" class="nav-link" id="nav-link-inicio">Inicio</a></li>
+            <li id="nav-link-colaboraciones"><a href="../collaborations/colaboraciones.html" class="nav-link">Colaboraciones</a></li>
+            <li id="nav-link-falla-heladera"><a href="../Reportes/reportarFalla.html" class="nav-link">Reportar Falla de Heladera</a></li>
+            <li id="nav-link-suscripcion-heladeras"><a href="../collaborations/suscripcionHeladeras.html" class="nav-link">Suscripción Heladeras</a></li>
+            <li id="nav-link-visualizar-reportes"><a href="../VisualizacionReportes/visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="colaboration-section" id="colaboration-section">
+            <h1>Historial de Colaboraciones</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <select class="form-control" id="row_type_input">
+                        <option value="0">Seleccione</option>
+                        <option value="1">Filtrar por tipo de colaboración</option>
+                        <option value="2">Filtrar por id</option>
+                        <option value="3">Filtrar por fecha</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3" id="filterInputColumn">
+                    <input type="text" class="form-control" id="filter_input" placeholder="Filtrar">
+                </div>
+
+                <div class="col-md-2" id="dayFilterInputColumn" style="display: none;">
+                    <input type="number" class="form-control date-input" id="filter_day" placeholder="Día (DD)" min="1" max="31">
+                </div>
+                <div class="col-md-2" id="monthFilterInputColumn" style="display: none;">
+                    <input type="number" class="form-control date-input" id="filter_month" placeholder="Mes (MM)" min="1" max="12">
+                </div>
+                <div class="col-md-2" id="yearFilterInputColumn" style="display: none;">
+                    <input type="number" class="form-control date-input" id="filter_year" placeholder="Año (YYYY)" min="1900" max="2100">
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="table table-striped" id="colaboracionesTable">
+                    <thead>
+                        <tr class="header_table">
+                            <th>Id</th>
+                            <th>Tipo Colaboración</th>
+                            <th>Fecha</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas de la tabla se agregarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-center" id="modal">
+        <div class="modal-content" id="modal-content">
+            <div class="modal-page">
+                <div class="modal-header" id="modal-header">
+                    <h2 id="modal-title"></h2>
+                    <span class="close" id="modal-close">&times;</span>
+                </div>
+                <div class="modal-body" id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+    <script src="scripts_historialColaboraciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

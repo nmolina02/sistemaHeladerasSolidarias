@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Personas Vulnerables</title>
+    <link rel="shortcut icon" href="../../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_listadoPersonasVulnerables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <main>
+        <section class="colaboration-section" id="colaboration-section">
+            <h1>Listado de Personas Vulnerables</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <select class="form-control" id="row_type_input">
+                        <option value="0">Seleccione</option>
+                        <option value="1">Filtrar por nombre y apellido</option>
+                        <option value="2">Filtrar por documentación</option>
+                        <option value="3">Filtrar por id</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="filter_input" placeholder="Filtrar">
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="table table-striped" id="vulnerablesTable">
+                    <thead>
+                        <tr class="header_table">
+                            <th>Id</th>
+                            <th>Nombre/s</th>
+                            <th>Apellido/s</th>
+                            <th>Documentación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas de la tabla se agregarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts_listadoPersonasVulnerables.js"></script>
+</body>
+</html>

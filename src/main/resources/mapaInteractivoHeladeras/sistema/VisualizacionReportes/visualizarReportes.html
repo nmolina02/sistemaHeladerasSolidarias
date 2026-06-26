@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Reportes</title>
+    <link rel="shortcut icon" href="../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_visualizar_reportes.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="../index.html" id="main_icon"><img src="../images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+        </div>
+
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+        </button>
+
+        <div class="buttons">
+            <a href="../login.html" style="text-decoration: none;">
+                <button id="login_button" class="custom-btn btn">
+                    <div class="text-container">
+                        <span class="text">Iniciar Sesión</span>
+                        <span class="text">Iniciar Sesión</span>
+                    </div>
+                </button>
+            </a>
+            <a href="../createAccount.html" style="text-decoration: none;">
+                <button id="create_account_button" class="custom-btn btn">
+                    <div class="text-container">
+                        <span class="text">Crear Cuenta</span>
+                        <span class="text">Crear Cuenta</span>
+                    </div>
+                </button>
+            </a>
+        </div>
+        <!-- Boton de perfil -->
+        <div class="nav-right">
+            <div class="dropdown-container_1">
+                <a href="#" id="user_circle" class="custom-btn btn" style="display: none;">
+                    <div class="text-container-user-profile">
+                        <span class="text-user-profile" id="profile_name">Usuario</span>
+                        <span class="text-user-profile" id="profile_name_2">Usuario</span>
+                        <span class="text-user-profile" id="profile_points">0 puntos</span>
+                        <span class="text-user-profile" id="profile_points_2">0 puntos</span>
+                    </div>
+                    <div class="profile-pic">
+                        <img id="profile_pic" src="../images/users_images/imagen_registro.png" alt="Foto de Perfil">
+                    </div>
+                </a>
+                <div class="dropdown-menu_1 profile-dropdown" id="profile_options">
+                    <a href="../userOptions/myProfile.html">
+                        <span>Mi Perfil</span>
+                    </a>
+                    <a href="../userOptions/premios.html" id="canjeoProductos">
+                        <span>Canjear Productos</span>
+                    </a>
+                    <a href="#" id="tarjetaSolicitada">
+                        <span>Solicitar tarjeta</span>
+                    </a>
+                    <a href="../userOptions/historialColaboraciones.html" id="misColaboraciones">
+                        <span>Mis Colaboraciones</span>
+                    </a>
+                    <a href="../userOptions/configAccount.html">
+                        <span>Configuración</span>
+                    </a>
+                    <a href="#">
+                        <span>Ayuda</span>
+                    </a>
+                    <a href="#" id="logout_button">
+                        <span>Cerrar Sesión</span>
+                    </a>
+                    <a href="#" id="change_rol" style="display: none;">
+                        <span>Cambiar a Rol</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <ul id="nav-links" class="nav-links">
+        <li><a href="../index.html" class="nav-link" id="nav-link-inicio">Inicio</a></li>
+        <li id="colaboraciones"><a href="../collaborations/colaboraciones.html" class="nav-link">Colaboraciones</a></li>
+        <li id="reportar_falla_heladera"><a href="../Reportes/reportarFalla.html" class="nav-link">Reportar Falla de Heladera</a></li>
+        <li id="suscripcion_heladeras"><a href="../collaborations/suscripcionHeladeras.html" class="nav-link">Suscripción Heladeras</a></li>
+
+        <!--Acciones para tecnico-->
+        <li id="nav-link-tecnico-incidente" style="display: none;"><a href="../tecnicoActions/incidentesHistorial.html" class="nav-link">Visualizar Incidentes</a></li>
+        <li id="nav-link-tecnico-visita" style="display: none;"><a href="../tecnicoActions/realizarVisitaHeladera.html" class="nav-link">Realizar Visita Heladera</a></li>
+        <!--fin Acciones para tecnico-->
+
+        <!--Acciones para administrador-->
+        <li id="nav-link-admin" style="display: none;"><a href="../adminActions/createTecnicoAccount.html" class="nav-link">Registrar Técnico</a></li>
+        <li id="nav-link-cargar-csv" style="display: none;"><a href="../CargaMasiva/cargarCSV.html" class="nav-link">Cargar CSV</a></li>
+        <!--fin Acciones para administrador-->
+        
+        <li><a href="visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="reportes-section" id="reportes-section">
+        <h1>Visualización de Reportes</h1>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="solicitar_reporte_button">Solicitar nuevo reporte</button>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group d-flex align-items-center mr-3">
+                    <input type="date" id="filterDateInput" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group d-flex align-items-center">
+                    <select id="filterTypeInput" class="form-control">
+                        <option value="0">Filtrar por tipo de Reporte</option>
+                        <option value="1">Fallas de Heladera</option>
+                        <option value="2">Movimientos de Heladera</option>
+                        <option value="3">Viandas Donadas por Colaborador</option>
+                    </select>
+                </div>
+            </div>            
+        </div>
+        <div class="table-wrapper">
+            <table class="table table-striped" id="reportesTable">
+                <thead>
+                    <tr class="header_table">
+                        <th>Id</th>
+                        <th>Tipo Reporte</th>
+                        <th>Fecha de Emisión</th>
+                        <th>Fecha de Vencimiento</th>
+                        <th>Solicitante</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas de la tabla se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Solicitar nuevo reporte</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="reportForm" class="needs-validation" novalidate>
+
+                        <div class="mb-3">
+                            <select id="tipoSolicitud" class="form-select" required aria-label="select example">
+                                <option value="0">Seleccionar reporte deseado</option>
+                                <option value="FALLAS_HELADERA">Fallas de Heladera</option>
+                                <option value="MOVIMIENTOS_HELADERA">Movimientos de Heladera</option>
+                                <option value="VIANDAS_COLABORADOR">Viandas Donadas por Colaborador</option>
+                            </select>
+                            <div class="invalid-feedback">Debe elegir un tipo de reporte</div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button id="generateReportButton" type="button" class="btn btn-primary btn-reporte" disabled>Generar reporte</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+    <div class="modal-center" id="modal">
+        <div class="modal-content" id="modal-content">
+            <div class="modal-page">
+                <div class="modal-header" id="modal-header">
+                    <button class="btn btn-primary btn-exportarPDF" id="exportarPDFButton">Exportar PDF</button>
+                    <h2 id="modal-title"></h2>
+                    <span class="close" id="modal-close">&times;</span>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!--Las tabla se carga segun el informe-->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="social-media">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts_visualizar_reportes.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

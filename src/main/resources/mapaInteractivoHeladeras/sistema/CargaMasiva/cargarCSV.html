@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar CSV</title>
+    <link rel="shortcut icon" href="../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_csv.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html" id="main_icon"><img src="../images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+            </button>
+
+            <div class="buttons">
+                <a href="../login.html" style="text-decoration: none;">
+                    <button id="login_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Iniciar Sesión</span>
+                            <span class="text">Iniciar Sesión</span>
+                        </div>
+                    </button>
+                </a>
+                <a href="../createAccount.html" style="text-decoration: none;">
+                    <button id="create_account_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Crear Cuenta</span>
+                            <span class="text">Crear Cuenta</span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <!-- Boton de perfil -->
+            <div class="nav-right">
+                <div class="dropdown-container_1">
+                    <a href="#" id="user_circle" class="custom-btn btn" style="display: none;">
+                        <div class="text-container-user-profile">
+                            <span class="text-user-profile" id="profile_name">Usuario</span>
+                            <span class="text-user-profile" id="profile_name_2">Usuario</span>
+                            <span class="text-user-profile" id="profile_points" style="display: none;">0 puntos</span>
+                            <span class="text-user-profile" id="profile_points_2" style="display: none;">0 puntos</span>
+                        </div>
+                        <div class="profile-pic">
+                            <img id="profile_pic" src="../images/users_images/imagen_registro.png" alt="Foto de Perfil">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu_1 profile-dropdown" id="profile_options">
+                        <a href="../userOptions/myProfile.html">
+                            <span>Mi Perfil</span>
+                        </a>
+                        <a href="../userOptions/configAccount.html">
+                            <span>Configuración</span>
+                        </a>
+                        <a href="#">
+                            <span>Ayuda</span>
+                        </a>
+                        <a href="#" id="logout_button">
+                            <span>Cerrar Sesión</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="../indexAdmin.html" class="nav-link">Inicio</a></li>
+            <li><a href="../adminActions/createTecnicoAccount.html" class="nav-link">Registrar Técnico</a></li>
+            <li><a href="cargarCSV.html" class="nav-link">Cargar CSV</a></li>
+            <li><a href="../VisualizacionReportes/visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="main_row" class="row justify-content-center">
+            <div id="file_uploader">
+                <div class="uploader_header">
+                    <h1 class="uploader_title">Cargar CSV</h1>
+                </div>
+                <ul class="file_list"></ul>
+                <div id="file_upload_box" class="d-flex flex-column">
+                    <h2 id="box_title" class="box_title">
+                        <span id= "file_tip" class="file_instruction">Puede arrastrar y soltar un archivo CSV aquí para añadirlo</span>
+                    </h2>
+                    <label for="select_og" id="select_file_button" type="button" class="btn btn-primary btn-sm">Seleccionar archivo CSV de su dispositivo</label>
+                    <input id="select_og" class="file_browse_input" type="file" value = "Seleccionar archivos de su dispositivo"  hidden accept = ".csv">
+                </div>
+                <div class="d-md-flex justify-content-md-end">
+                    <button id="send_button" type="button" class="btn btn-secondary btn-sm" disabled>Enviar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts_CSV.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

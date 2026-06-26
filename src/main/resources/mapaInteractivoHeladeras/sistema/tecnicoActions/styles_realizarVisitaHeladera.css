@@ -1,0 +1,866 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    line-height: 1.4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #2b89f1;
+    padding: 20px 20px 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo i {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.ong-logo {
+    height: 50px;
+    margin-right: 10px;
+    margin-top: -15%;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+header input[type="text"] {
+    flex-grow: 1;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+/*Animaciones de los botones de login y create account*/
+
+.custom-btn.btn {
+    all: unset;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 8px 15px;
+    background-color: white;
+    color: black;
+    line-height: 1.5;
+    font-weight: 600;
+    border: 3px solid black;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.custom-btn.btn::before,
+.custom-btn.btn::after {
+    content: "";
+    position: absolute;
+    background: #54cbff;
+    width: 113%;
+    height: 102%;
+    pointer-events: none;
+    transform: skew(30deg) translateY(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.custom-btn.btn::before {
+    --direction: 1;
+    top: -103%;
+    left: -70%;
+}
+
+.custom-btn.btn::after {
+    --direction: -1;
+    top: 102%;
+    left: 69%;
+}
+
+.custom-btn.btn:hover::before,
+.custom-btn.btn:hover::after {
+    transform: skew(30deg) translateY(calc(var(--direction) * 100%));
+}
+
+.text-container {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.text {
+    display: block;
+    transition: 0.3s;
+}
+
+.custom-btn.btn:hover .text:nth-child(1) {
+    color:black;
+    translate: 0 80%;
+}
+
+.text:nth-child(2) {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover .text:nth-child(2) {
+    transition-delay: 0.1s;
+    translate: 0 0;
+}
+
+/*Fin Animaciones de los botones de login y create account*/
+
+/* Animaciones account button */
+.text-container-user-profile {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-user-profile {
+    display: block;
+    transition: 0.3s;
+}
+
+#profile_points, #profile_points_2 {
+    display: block;
+    font-size: 0.6rem;
+    color: black;
+}
+
+.custom-btn.btn:hover .text-user-profile:nth-child(1) {
+    color: black;
+    translate: 0 160%;
+}
+
+.text-user-profile:nth-child(2) {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover .text-user-profile:nth-child(2) {
+    transition-delay: 0.1s;
+    translate: 0 0;
+}
+
+.custom-btn.btn:hover #profile_points {
+    color: black;
+    translate: 0 160%;
+}
+#profile_points_2 {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover #profile_points_2 {
+    transition-delay: 0.1s;
+    translate: 0 55%;
+}
+/* fin Animaciones account button */
+
+/* Estilo de la barra de nevegación */
+
+nav {
+    background-color: #54cbff;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color:black;
+    text-decoration: none;
+    padding: 20px 0;
+    display: block;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 0.625rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s;
+}
+
+.nav-link:hover {
+    background-color: #392fea;
+    color: white;
+}
+
+/* Fin Estilo de la barra de nevegación */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* El contenedor principal debe ocupar todo el espacio disponible */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenido principal debe expandirse para llenar el espacio disponible */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 1%;
+    background-color: rgb(218, 216, 216);;
+    display: grid;
+    place-content: center;
+}
+
+.realizar-visita-section {
+    max-width: 1400px;
+    width: 95%;
+    background-color: white;
+    padding: 2%;
+    border-radius: 16px;
+    margin-inline: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.realizar-visita-section h1 {  
+    text-align: center;
+    margin-block: 28px;
+    color: #2b89f1;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header_table th, .header_table td {
+    background-color: #0e3969;
+    color: white;
+    padding: 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+th, td {
+    background-color: #0091b1a4;
+    color: white;
+    padding: 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Alternar colores de las filas en tbody */
+tbody tr:nth-child(odd) {
+    background-color: #00a5caa4; /* Color para filas impares */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0091b1a4; /* Color para filas pares */
+}
+
+.form-control {
+    margin-bottom: 10%;
+}
+
+footer {
+    background-color: #2b89f1;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer div {
+    width: 24%;
+}
+
+footer div p {
+    margin: 5px 0;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+footer .social-media a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 2.5em;
+}
+
+footer .social-media a:last-child {
+    margin-right: 0;
+}
+
+/* Estilos para el perfil de usuario */
+#user_circle {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    margin-top: -8px;
+    width: 86%;
+    height: 1.5rem;
+    background-color: #f9f9f9;
+}
+
+.profile-pic {
+    width: 2.25rem;
+    margin-left: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-pic > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* dropdown menu 1 */
+.dropdown-container_1 {
+    position: relative;
+    overflow: visible;
+}
+
+.dropdown-menu_1 {
+    position: absolute;
+    left: 0;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    top: calc(100% + 8px);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.dropdown-container_1:hover > .dropdown-menu_1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu_1.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+}
+
+.dropdown-menu_1 > a {
+    font-weight: 600;
+    padding: 0.5rem 0.5rem;
+    background-color: #292929;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.dropdown-menu_1 > a:hover {
+    background-color: #353535;
+}
+
+.dropdown-menu_1 > a > span:nth-of-type(2) {
+    color: #9ca3af;
+}
+
+/* Fin dropdown menu 1*/
+
+/* dropdown perfil de usuario */
+
+.profile-dropdown {
+    display: none;
+    margin-left: -7%;
+    width: 110%;
+    padding: 5px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.dropdown-container-jeje:hover:has(.profile-dropdown) > .profile-dropdown {
+    translate: 0 5px;
+    opacity: 1;
+}
+.profile-dropdown > a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #9b9da0;
+    font-size: 0.87rem;
+    transition: 0.15s ease;
+}
+.profile-dropdown > a:hover {
+    background-color: #171717;
+    color: #f0f3f5;
+    text-decoration: none;
+}
+/* Selecciona el penúltimo elemento y aplica el estilo */
+.profile-dropdown > a:hover:nth-last-child(2) {
+    background-color: red;
+}
+
+/* fin Estilos para el perfil de usuario */
+
+/* dropdown Estilos para colaboraciones */
+.collaborations-dropdown {
+    width: 190%;
+    padding: 5px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.dropdown-container:hover:has(.collaborations-dropdown) > .collaborations-dropdown {
+    translate: 0 0;
+    opacity: 1;
+}
+.collaborations-dropdown > a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #9b9da0;
+    font-size: 0.87rem;
+    transition: 0.15s ease;
+}
+.collaborations-dropdown > a:hover {
+    background-color: #171717;
+    color: #f0f3f5;
+    text-decoration: none;
+}
+
+/* fin Estilos para colaboraciones */
+
+/* Botón de menú hamburguesa */
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    display: none; /* Ocultar en pantallas grandes */
+    margin-left: 16px;
+    margin-right: auto;
+}
+
+.btn.btn-primary {
+    left: auto;
+}
+
+.btn.btn-primary.btn-visita-heladera {
+    width: 100%;
+}
+
+.visita-item {
+    display: flex;
+    align-items: center;
+}
+
+.visita-item p {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.visita-item .btn {
+    margin-left: 10px;
+    margin-bottom: 5%;
+}
+
+/* Estilos personalizados para el modal */
+/* Clase para centrar el modal */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+}
+
+.modal-center {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    margin-top: 5%;
+    border: 1px solid #888;
+    max-width: 450px;
+    width: 80%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+body.blur #realizar-visita-section {
+    filter: blur(10px);
+}
+
+.modal-page {
+    border: 1px solid #dee2e6;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #2b89f1;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal-title {
+    font-size: 2.0rem;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.modal-body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    text-align: right;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.close {
+    color: white;
+    opacity: 1;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilos para la ventana emergente dropbox*/
+.modalDropbox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content-Dropbox {
+    background-color: #fefefe;
+    margin: 4% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 1200px;
+    max-height: 500px;
+    overflow-y: auto;
+    width: 80%;
+}
+.closeDropbox {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.closeDropbox:hover,
+.closeDropbox:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#ImageTitle {
+    text-align: center;
+    margin-block: 28px;
+    color: #2b89f1;
+    margin-top: 0;
+    font-size: 2rem;
+}
+/* fin Estilos para la ventana emergente dropbox*/
+
+/* Estilos para el dropzone */
+.dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropzone.dragover {
+    border-color: #000;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    width: auto;
+    max-height: 200px;
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-family: inherit;
+    border: 0;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    padding: 7px 11px;
+    border-radius: 50%;
+}
+.remove-button:hover {
+    background-color: #979797;
+}
+
+#submitWithoutImage, #submitImage {
+    margin-top: 2%;
+    width: 49%;
+}
+
+#submitImage:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#submitImage:enabled {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#submitWithoutImage {
+    margin-right: 2%;
+}
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 913px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .ong-logo {
+        margin-top: 2%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .buttons {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .custom-btn.btn {
+        width: auto;
+    }
+
+    #user_circle {
+        margin-top: 2%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+
+    .realizar-visita-section {
+        padding: 4%;
+    }
+
+    .realizar-visita-section h1 {
+        font-size: 2rem;
+    }
+
+    .form-control {
+        margin-bottom: 3%;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    footer div {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+
+    .button-text {
+        display: none;
+    }
+
+    #ImageTitle {
+        font-size: 1.5rem;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}

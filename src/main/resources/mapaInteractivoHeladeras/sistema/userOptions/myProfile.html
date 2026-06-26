@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="shortcut icon" href="../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_myProfile.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html" id="main_icon"><img src="../images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+            </button>
+
+            <!-- Boton de perfil -->
+            <div class="nav-right">
+                <div class="dropdown-container_1">
+                    <a href="#" id="user_circle" class="custom-btn btn">
+                        <div class="text-container-user-profile">
+                            <span class="text-user-profile" id="profile_name">Usuario</span>
+                            <span class="text-user-profile" id="profile_name_2">Usuario</span>
+                            <span class="text-user-profile" id="profile_points">0 puntos</span>
+                            <span class="text-user-profile" id="profile_points_2">0 puntos</span>
+                        </div>
+                        <div class="profile-pic">
+                            <img id="profile_pic" src="../images/users_images/imagen_registro.png" alt="Foto de Perfil">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu_1 profile-dropdown" id="profile_options">
+                        <a href="myProfile.html">
+                            <span>Mi Perfil</span>
+                        </a>
+                        <a href="premios.html" id="canjearProducto">
+                            <span>Canjear Productos</span>
+                        </a>
+                        <a href="#" id="tarjetaSolicitada">
+                            <span>Solicitar tarjeta</span>
+                        </a>
+                        <a href="../userOptions/historialColaboraciones.html" id="misColaboraciones">
+                            <span>Mis Colaboraciones</span>
+                        </a>
+                        <a href="../userOptions/configAccount.html">
+                            <span>Configuración</span>
+                        </a>
+                        <a href="#">
+                            <span>Ayuda</span>
+                        </a>
+                        <a href="#" id="logout_button">
+                            <span>Cerrar Sesión</span>
+                        </a>
+                        <a href="#" id="change_rol" style="display: none;">
+                            <span>Cambiar a Rol</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="../index.html" class="nav-link" id="nav-link-inicio">Inicio</a></li>
+            <li id="nav-link-colaboraciones"><a href="../collaborations/colaboraciones.html" class="nav-link">Colaboraciones</a></li>
+            <li id="nav-link-falla-heladera"><a href="../Reportes/reportarFalla.html" class="nav-link">Reportar Falla de Heladera</a></li>
+            <li id="nav-link-suscripcion-heladeras"><a href="../collaborations/suscripcionHeladeras.html" class="nav-link">Suscripción Heladeras</a></li>
+            
+            <!--Acciones para tecnico-->
+            <li id="nav-link-tecnico-incidente" style="display: none;"><a href="../tecnicoActions/incidentesHistorial.html" class="nav-link">Visualizar Incidentes</a></li>
+            <li id="nav-link-tecnico-visita" style="display: none;"><a href="../tecnicoActions/realizarVisitaHeladera.html" class="nav-link">Realizar Visita Heladera</a></li>
+            <!--fin Acciones para tecnico-->
+
+            <!--Acciones para administrador-->
+            <li id="nav-link-admin" style="display: none;"><a href="../adminActions/createTecnicoAccount.html" class="nav-link">Registrar Técnico</a></li>
+            <li id="nav-link-cargar-csv" style="display: none;"><a href="../CargaMasiva/cargarCSV.html" class="nav-link">Cargar CSV</a></li>
+            <!--fin Acciones para administrador-->
+            
+            <li id="nav-link-visualizar-reportes"><a href="../VisualizacionReportes/visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="user-profile-section">
+            <div class="user-profile-header">
+                <div class="user-profile-frontpage">
+                    <div class="user-profile-avatar">
+                        <img id="user_image" src="../images/users_images/imagen_registro.png" alt="Avatar image">
+                        <input type="file" id="file_input" style="display: none;" accept="image/*">
+                        <button type="button" class="avatar-button" id="avatar_button">
+                            <i class="far fa-image"></i>
+                        </button>
+                    </div>
+                    <button type="button" class="description-button" id="description_button">
+                        <i class="fas fa-pencil-alt"></i>
+                        <span class="button-text">Cambiar descripción</span>
+                    </button>
+                </div>
+            </div>
+            <div class="user-profile-body">
+                <div class="user-profile-bio">
+                    <h3 id="colaborator_name_field" class="titulo">Nombre del Colaborador</h3>
+                    <p id="description_field" class="description_field">Descripción...</p>
+                    <textarea id="description_edit" class="description_edit" style="display: none;"></textarea>
+                    <button type="button" id="save_button" style="display: none;">Guardar</button>
+                    <button type="button" id="cancel_button" style="display: none;">Cancelar</button>
+                </div>
+                <div class="user-profile-footer">
+                    <ul class="data-list">
+                        <li id="username_field">
+                            <i class="icono fas fa-user-circle"></i>
+                            <span>Username:</span>
+                        </li>
+                        <li id="type_colaborator_field">
+                            <i class="icono fas fa-user"></i>
+                            <span>Tipo Usuario:</span>
+                        </li>
+                        <li id="email_field">
+                            <i class="icono fas fa-envelope"></i>
+                            <span>Correo Eléctronico:</span>
+                        </li>
+                        <li id="phone_field">
+                            <i class="icono fas fa-phone-alt"></i>
+                            <span>Teléfono:</span>
+                        </li>
+                        <li id="card_field">
+                            <i class="icono fas fa-credit-card"></i>
+                            Tarjeta:
+                        </li>
+                    </ul>
+                    <ul class="data-list" id="right-column-data-list">
+                        <li id="dni_field">
+                            <i class="icono fas fa-id-card"></i>
+                            <span>Documentación:</span>
+                        </li>
+                        <li id="birthdate_field">
+                            <i class="icono fas fa-calendar-alt"></i>
+                            <span>Fecha de Nacimiento:</span>
+                        </li>
+                        <li id="company_type_field" style="display: none;">
+                            <i class="icono fas fa-building"></i>
+                            <span>Tipo Compañía:</span>
+                        </li>
+                        <li id="rubro_field" style="display: none;">
+                            <i class="icono fas fa-briefcase"></i>
+                            <span>Rubro:</span>
+                        </li>
+                        <li id="address_field">
+                            <i class="icono fas fa-map-marker-alt"></i>
+                            <span>Domicilio:</span>
+                        </li>
+                        <li id="register_date_field">
+                            <i class="icono fas fa-user-check"></i>
+                            <span>Fecha de Registro:</span>
+                        </li>
+                        <li id="user_points_field">
+                            <i class="icono fas fa-coins"></i>
+                            Puntos:
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+    <script src="scripts_myProfile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

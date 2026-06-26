@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Falla de Heladera</title>
+    <link rel="shortcut icon" href="../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_reportes.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html" id="main_icon"><img src="../images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+            </button>
+
+            <div class="buttons">
+                <a href="../login.html" style="text-decoration: none;">
+                    <button id="login_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Iniciar Sesión</span>
+                            <span class="text">Iniciar Sesión</span>
+                        </div>
+                    </button>
+                </a>
+                <a href="../createAccount.html" style="text-decoration: none;">
+                    <button id="create_account_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Crear Cuenta</span>
+                            <span class="text">Crear Cuenta</span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <!-- Boton de perfil -->
+            <div class="nav-right">
+                <div class="dropdown-container_1">
+                    <a href="#" id="user_circle" class="custom-btn btn" style="display: none;">
+                        <div class="text-container-user-profile">
+                            <span class="text-user-profile" id="profile_name">Usuario</span>
+                            <span class="text-user-profile" id="profile_name_2">Usuario</span>
+                            <span class="text-user-profile" id="profile_points">0 puntos</span>
+                            <span class="text-user-profile" id="profile_points_2">0 puntos</span>
+                        </div>
+                        <div class="profile-pic">
+                            <img id="profile_pic" src="../images/users_images/imagen_registro.png" alt="Foto de Perfil">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu_1 profile-dropdown" id="profile_options">
+                        <a href="../userOptions/myProfile.html">
+                            <span>Mi Perfil</span>
+                        </a>
+                        <a href="../userOptions/premios.html">
+                            <span>Canjear Productos</span>
+                        </a>
+                        <a href="#" id="tarjetaSolicitada">
+                            <span>Solicitar tarjeta</span>
+                        </a>
+                        <a href="../userOptions/historialColaboraciones.html" id="misColaboraciones">
+                            <span>Mis Colaboraciones</span>
+                        </a>
+                        <a href="../userOptions/configAccount.html">
+                            <span>Configuración</span>
+                        </a>
+                        <a href="#">
+                            <span>Ayuda</span>
+                        </a>
+                        <a href="#" id="logout_button">
+                            <span>Cerrar Sesión</span>
+                        </a>
+                        <a href="#" id="change_rol" style="display: none;">
+                            <span>Cambiar a Rol</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="../index.html" class="nav-link">Inicio</a></li>
+            <li><a href="../collaborations/colaboraciones.html" class="nav-link">Colaboraciones</a></li>
+            <li id="reportar_falla_heladera"><a href="reportarFalla.html" class="nav-link">Reportar Falla de Heladera</a></li>
+            <li id="suscripcion_heladeras"><a href="../collaborations/suscripcionHeladeras.html" class="nav-link">Suscripción Heladeras</a></li>
+            <li><a href="../VisualizacionReportes/visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="main_row">
+            <div id="background" class="col-9">
+                <h1>Reportar Falla de Heladera</h1>
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                        <label for="fridge" class="form-label">Heladera</label>
+                        <select class="form-control" id="fridge">
+                            <option value="" selected>Seleccione una opción</option>
+                            <!-- Las opciones se actualizarán dinámicamente -->
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="issue_type" class="form-label">Tipo de falla</label>
+                        <select class="form-control" id="issue_type" required>
+                            <option selected disabled value="">Elegir una opción</option>
+                            <option value="ALTA">Alta</option>
+                            <option value="MEDIA">Media</option>
+                            <option value="BAJA">Baja</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, elige una opcion.
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="issue_description" class="form-label">Descripcion de la falla</label>
+                        <input type="text" class="form-control" id="issue_description" placeholder="Descripción" required>
+                        <div class="invalid-feedback">
+                            Por favor introduce una descripcion.
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div id="dropzone" class="dropzone">
+                            <p id="dropzone-message">Arrastra una imagen aquí o haz clic para seleccionar una</p>
+                            <div id="preview"></div>
+                        </div>
+                        <input type="file" id="fileInput" accept=".jpg, .jpeg, .png" style="display: none;">
+                    </div>
+                </form>
+                <button id="submit_button" class="btn btn-primary" type="submit">Reportar falla</button>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts_reportes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

@@ -1,0 +1,461 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* El contenedor principal debe ocupar todo el espacio disponible */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenido principal debe expandirse para llenar el espacio disponible */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #2b89f1;
+    padding: 20px 20px 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo i {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.ong-logo {
+    height: 50px;
+    margin-right: 10px;
+    margin-top: -15%;
+}
+
+.filter-select {
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+header input[type="text"] {
+    flex-grow: 1;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+/*Animaciones de los botones de login y create account*/
+
+.custom-btn.btn {
+    all: unset;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 8px 15px;
+    background-color: white;
+    color: black;
+    line-height: 1.5;
+    font-weight: 600;
+    border: 3px solid black;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.custom-btn.btn::before,
+.custom-btn.btn::after {
+    content: "";
+    position: absolute;
+    background: #54cbff;
+    width: 113%;
+    height: 102%;
+    pointer-events: none;
+    transform: skew(30deg) translateY(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.custom-btn.btn::before {
+    --direction: 1;
+    top: -103%;
+    left: -70%;
+}
+
+.custom-btn.btn::after {
+    --direction: -1;
+    top: 102%;
+    left: 69%;
+}
+
+.custom-btn.btn:hover::before,
+.custom-btn.btn:hover::after {
+    transform: skew(30deg) translateY(calc(var(--direction) * 100%));
+}
+
+.text-container {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.text {
+    display: block;
+    transition: 0.3s;
+}
+
+.custom-btn.btn:hover .text:nth-child(1) {
+    color:black;
+    translate: 0 80%;
+}
+
+.text:nth-child(2) {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover .text:nth-child(2) {
+    transition-delay: 0.1s;
+    translate: 0 0;
+}
+
+/*Fin Animaciones de los botones de login y create account*/
+
+/* Animaciones account button */
+.text-container-user-profile {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-user-profile {
+    display: block;
+    transition: 0.3s;
+}
+
+#profile_points, #profile_points_2 {
+    display: block;
+    font-size: 0.6rem;
+    color: black;
+}
+
+.custom-btn.btn:hover .text-user-profile:nth-child(1) {
+    color: black;
+    translate: 0 160%;
+}
+
+.text-user-profile:nth-child(2) {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover .text-user-profile:nth-child(2) {
+    transition-delay: 0.1s;
+    translate: 0 0;
+}
+
+.custom-btn.btn:hover #profile_points {
+    color: black;
+    translate: 0 160%;
+}
+#profile_points_2 {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover #profile_points_2 {
+    transition-delay: 0.1s;
+    translate: 0 55%;
+}
+/* fin Animaciones account button */
+
+/* Estilo de la barra de nevegación */
+
+nav {
+    background-color: #54cbff;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color:black;
+    text-decoration: none;
+    padding: 20px 0;
+    display: block;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 0.625rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s;
+}
+
+.nav-link:hover {
+    background-color: #392fea;
+    color: white;
+}
+
+/* Fin Estilo de la barra de nevegación */
+
+main {
+    padding: 1%;
+    background-color: rgb(218, 216, 216);
+    display: grid;
+    place-content: center;
+}
+
+/*Inicio estilo del uploader*/
+#main_row {
+    height: 90%;
+}
+
+#file_uploader {
+    max-width: 800px;
+    width: 90%;
+    background-color: white;
+    padding: 2%;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-inline: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.uploader_title {
+    text-align: center;
+    margin-block: 28px;
+    color: #2b89f1;
+    margin-top: -2%;
+    margin-bottom: 0;
+}
+
+#file_upload_box {
+    justify-content: center;
+    margin: 1% 2% 2%;
+    border-radius: 5px;
+    min-height: 100px;
+    border: 2px dashed #B1ADD4;
+    height: 75%;
+}
+#file_upload_box.active{
+    border: 4px solid #B1ADD4;
+} 
+
+/*Fin estilo del uploader*/
+
+footer {
+    background-color: #2b89f1;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer div {
+    width: 24%;
+}
+
+footer div p {
+    margin: 5px 0;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+footer .social-media a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 2.5em;
+}
+
+footer .social-media a:last-child {
+    margin-right: 0;
+}
+/* dropdown menu 1 */
+.dropdown-container_1 {
+    position: relative;
+    overflow: visible;
+}
+
+.dropdown-menu_1 {
+    position: absolute;
+    left: 0;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    top: calc(100% + 8px);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.dropdown-container_1:hover > .dropdown-menu_1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu_1.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+}
+
+.dropdown-menu_1 > a {
+    font-weight: 600;
+    padding: 0.5rem 0.5rem;
+    background-color: #292929;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.dropdown-menu_1 > a:hover {
+    background-color: #353535;
+}
+
+.dropdown-menu_1 > a > span:nth-of-type(2) {
+    color: #9ca3af;
+}
+
+/* Fin dropdown menu 1*/
+
+#box_title{
+   text-align: center; 
+}
+
+#select_file_button {
+    width: 50%;
+    align-self: center;
+    margin-top: 5%;
+    padding: 5px;
+    
+}
+#select_file_button.active{
+    background-color:rgb(69, 98, 131);
+}
+
+#send_button {
+    width: 100%;
+    align-self: center;
+    margin-top: 2%;
+    padding: 5px;
+}
+#send_button.active{
+    background-color: #007bff;
+    border-color: #007bff;
+}
+#file_tip {
+    color: #9ca3af;
+    font-size: 70%;
+}
+#file_tip.active{
+    color: #212121;
+}
+
+.custom-confirm-button {
+    background-color: #28a745 !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.custom-confirm-button:hover {
+    background-color: #218838 !important;
+}
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 913px) {
+    .uploader_title {
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
+}

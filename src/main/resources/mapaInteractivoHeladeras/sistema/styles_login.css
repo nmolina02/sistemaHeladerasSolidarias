@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, system-ui, sans-serif;
+  background-color: #54cbff;
+  color: #e7e9ea;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-family: inherit;
+  border: 0;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgb(218, 216, 216);
+  padding: 24px 20px;
+  border-radius: 16px;
+  margin-inline: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.close-button {
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  padding: 7px 11px;
+  border-radius: 50%;
+}
+.close-button:hover {
+  background-color: #979797;
+}
+
+.ong-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.content {
+  width: 300px;
+  text-align: center;
+  margin-inline: auto;
+  margin-top: -3%;
+}
+.content h1 {
+  margin-block: 28px;
+  color: #2b89f1;
+}
+
+#error_message {
+  color: red;
+  font-size: 14px;
+  margin-top: 2%;
+  margin-bottom: -4%;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 10px;
+  background-color: #f8d7da;
+  display: none;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 36px;
+}
+.primary-button,
+.secondary-button {
+  width: 100%;
+  border-radius: 20px;
+  padding: 8px 0;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: -2%;
+}
+.primary-button {
+  background-color: #afafaf;
+  color: white;
+  cursor: not-allowed;
+}
+.primary-button:hover:not(:disabled) {
+  background-color: #0daf0a;
+}
+
+.primary-button:enabled {
+  background-color: #04d300;
+  cursor: pointer;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+.secondary-button:hover {
+  background-color: #cfcfcf;
+}
+
+.log-in-section {
+  width: 100%;
+  position: relative;
+  margin-bottom: -2%;
+  margin-top: -4%;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #333639;
+  outline: none;
+  padding: 20px 10px;
+  color: black;
+  font-size: 18px;
+  font-family: "Roboto";
+}
+
+.input-group input::placeholder {
+  opacity: 0;
+}
+
+.input-group label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: #71767b;
+  font-size: 18px;
+  pointer-events: none;
+  transition: 300ms ease;
+}
+
+.input-group input:focus {
+  outline: 1px solid black;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: 6px;
+  left: 10px;
+  font-size: 12px;
+}
+
+.sign-up {
+  margin-top: 32px;
+  font-weight: 300;
+  text-align: center;
+}
+.sign-up p, .sign-up a {
+  color: black;
+}
+.sign-up a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-visibility {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: black;
+}
+.btn-visibility:focus {
+  outline: none;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="images/icono/icono.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles_login.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <button class="close-button" id="back_button">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <a href="index.html"><img src="images/principal/logo2.png" alt="Logo" class="ong-logo"></a>
+      </div>
+
+      <div class="content" id="content">
+        <h1>Heladeras Solidarias</h1>
+        <div class="log-in-section">
+          <div class="input-group">
+            <input type="text" id="username_input" placeholder="Usuario">
+            <label for="username_input">Usuario</label>
+          </div>
+          <div class="input-group" style="position: relative;">
+            <input type="password" id="password_input" placeholder="Contraseña">
+            <label for="password_input">Contraseña</label>
+            <button type="button" id="toggle_password" class="btn-visibility">
+                <i class="fas fa-eye" id="password_icon"></i>
+            </button>
+        </div>        
+          <div id="error_message">Usuario o contraseña incorrectos.</div>
+        </div>
+        
+
+        <div class="action-buttons">
+          <button id="login_button" class="primary-button" disabled>Iniciar Sesión</button>
+          <button id="login_button_google" class="secondary-button google-button">
+            <object data="images/info_icons/google.png" class="google-icon"></object>
+            <span>Ingresar con Google</span>
+          </button>
+          <a href="forgotPassword.html">
+            <button id="forgot_password" class="secondary-button">¿Olvidaste tu contraseña?</button>
+          </a>
+        </div>
+      </div>
+      <div class="sign-up">
+        <p>¿No tienes una cuenta? <a id="create_account_button" href="createAccount.html">Crear cuenta</a></p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="scripts_login.js"></script>
+  </body>
+</html>

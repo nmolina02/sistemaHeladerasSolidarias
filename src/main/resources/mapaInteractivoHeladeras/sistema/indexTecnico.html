@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Heladeras Solidarias</title>
+    <link rel="shortcut icon" href="images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_tecnico.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo" id="main_icon">
+                <a href="indexTecnico.html"><img src="images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+            </button>
+
+            <div class="buttons">
+                <a href="login.html" style="text-decoration: none;">
+                    <button id="login_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Iniciar Sesión</span>
+                            <span class="text">Iniciar Sesión</span>
+                        </div>
+                    </button>
+                </a>
+                <a href="createAccount.html" style="text-decoration: none;">
+                    <button id="create_account_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Crear Cuenta</span>
+                            <span class="text">Crear Cuenta</span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <!-- Boton de perfil -->
+            <div class="nav-right">
+                <div class="dropdown-container_1">
+                    <a href="#" id="user_circle" class="custom-btn btn" style="display: none;">
+                        <div class="text-container-user-profile">
+                            <span class="text-user-profile" id="profile_name">Usuario</span>
+                            <span class="text-user-profile" id="profile_name_2">Usuario</span>
+                        </div>
+                        <div class="profile-pic">
+                            <img id="profile_pic" src="images/users_images/imagen_registro.png" alt="Foto de Perfil">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu_1 profile-dropdown" id="profile_options">
+                        <a href="userOptions/myProfile.html">
+                            <span>Mi Perfil</span>
+                        </a>
+                        <a href="userOptions/configAccount.html">
+                            <span>Configuración</span>
+                        </a>
+                        <a href="#">
+                            <span>Ayuda</span>
+                        </a>
+                        <a href="#" id="logout_button">
+                            <span>Cerrar Sesión</span>
+                        </a>
+                        <a href="#" id="change_rol" style="display: none;">
+                            <span>Cambiar a Rol</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="indexTecnico.html" class="nav-link">Inicio</a></li>
+            <li><a href="tecnicoActions/incidentesHistorial.html" class="nav-link">Visualizar Incidentes</a></li>
+            <li><a href="tecnicoActions/realizarVisitaHeladera.html" class="nav-link">Realizar Visita Heladera</a></li>
+            <li><a href="VisualizacionReportes/visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="map-section" id="map-section">
+            <h1>Mapa de Heladeras</h1>
+            <div class="content-container">
+                <div class="map-container" id="map"></div>
+                <div class="heladeras-list">
+                    <h3>Heladeras (<span id="heladeras-count"></span>)</h3>
+                    <ul id="heladeras-list">
+                        <!-- Lista de heladeras -->
+                    </ul>
+                    <div class="map-legend">
+                        <p>Para interactuar con el mapa haga <b>click</b> en este.</p>
+                        <p>Para salir presione la tecla <b>Esc</b>.</p>
+                    </div>
+                </div>
+                <!-- Ventana emergente -->
+                <div id="info-popup" class="info-popup">
+                    <span class="close-btn" onclick="closePopup()">
+                        <img src="../images/info_icons/close-btn.png" alt="Close Button">
+                    </span>
+                    <div id="popup-content">
+                        <div id="popup-image" class="popup-image"></div>
+                        <div id="popup-info" class="popup-info"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="info-sections">
+            <div class="contact-info">
+                <p><strong>Medios de Contacto</strong></p>
+                <p><img src="../images/contacto/telefono.png" alt="Teléfono">Teléfono: 4423-0677</p>
+                <p><img src="../images/contacto/whatsapp.png" alt="Whatsapp">Whatsapp: (+54 9) 11 6723-8904</p>
+                <p><img src="../images/contacto/mail.png" alt="Email">Email: heladeras.solidarias@gmail.com</p>
+            </div>
+            <div class="location">
+                <p><strong>Ubicación</strong></p>
+                <p><img src="../images/ubicacion/ubicacion.png" alt="Ubicacion">Avenida Callao 1103 - Recoleta - CABA</p>
+            </div>
+            <div class="documentation">
+                <p><strong>Documentación</strong></p>
+                <p><img src="../images/documentacion/terminos_y_condiciones.png" alt="Términos y Condiciones"><a href="#">Términos y Condiciones</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts_tecnico.js"></script>
+</body>
+</html>

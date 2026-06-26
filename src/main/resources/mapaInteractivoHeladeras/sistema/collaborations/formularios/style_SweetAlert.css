@@ -1,0 +1,16 @@
+/*     Sweet Alert 2     */
+.swal2-confirm.btn-custom-confirm2 {
+    background-color: #28a745 !important; 
+    color: white !important;
+}
+
+.swal2-cancel.btn-custom-cancel2 {
+    background-color: #dc3545 !important; 
+    color: white !important;
+}
+
+.btn-custom-ok2 {
+    background-color: #28a745 !important; 
+    color: white !important;
+}
+

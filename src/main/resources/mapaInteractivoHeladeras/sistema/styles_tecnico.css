@@ -1,0 +1,808 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenedor principal debe ocupar todo el espacio disponible */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenido principal debe expandirse para llenar el espacio disponible */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #2b89f1;
+    padding: 20px 20px 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo i {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.ong-logo {
+    height: 50px;
+    margin-right: 10px;
+    margin-top: -15%;
+}
+
+.filter-select {
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+header input[type="text"] {
+    flex-grow: 1;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+/*Animaciones de los botones de login y create account*/
+
+.custom-btn.btn {
+    all: unset;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 8px 15px;
+    background-color: white;
+    color: black;
+    line-height: 1.5;
+    font-weight: 600;
+    border: 3px solid black;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.custom-btn.btn::before,
+.custom-btn.btn::after {
+    content: "";
+    position: absolute;
+    background: #54cbff;
+    width: 113%;
+    height: 102%;
+    pointer-events: none;
+    transform: skew(30deg) translateY(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.custom-btn.btn::before {
+    --direction: 1;
+    top: -103%;
+    left: -70%;
+}
+
+.custom-btn.btn::after {
+    --direction: -1;
+    top: 102%;
+    left: 69%;
+}
+
+.custom-btn.btn:hover::before,
+.custom-btn.btn:hover::after {
+    transform: skew(30deg) translateY(calc(var(--direction) * 100%));
+}
+
+.text-container {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.text {
+    display: block;
+    transition: 0.3s;
+}
+
+.custom-btn.btn:hover .text:nth-child(1) {
+    color:black;
+    translate: 0 80%;
+}
+
+.text:nth-child(2) {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover .text:nth-child(2) {
+    transition-delay: 0.1s;
+    translate: 0 0;
+}
+
+/*Fin Animaciones de los botones de login y create account*/
+
+/* Animaciones account button */
+.text-container-user-profile {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-user-profile {
+    display: block;
+    transition: 0.3s;
+}
+
+#profile_points, #profile_points_2 {
+    display: block;
+    font-size: 0.6rem;
+    color: black;
+}
+
+.custom-btn.btn:hover .text-user-profile:nth-child(1) {
+    color: black;
+    translate: 0 160%;
+}
+
+.text-user-profile:nth-child(2) {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover .text-user-profile:nth-child(2) {
+    transition-delay: 0.1s;
+    translate: 0 0;
+}
+
+.custom-btn.btn:hover #profile_points {
+    color: black;
+    translate: 0 160%;
+}
+#profile_points_2 {
+    color: black;
+    position: absolute;
+    inset: 0;
+    translate: 0 -80%;
+}
+
+.custom-btn.btn:hover #profile_points_2 {
+    transition-delay: 0.1s;
+    translate: 0 55%;
+}
+/* fin Animaciones account button */
+
+/* Estilo de la barra de nevegación */
+
+nav {
+    background-color: #54cbff;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color:black;
+    text-decoration: none;
+    padding: 20px 0;
+    display: block;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 0.625rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s;
+}
+
+.nav-link:hover {
+    background-color: #392fea;
+    color: white;
+}
+
+/* Fin Estilo de la barra de nevegación */
+
+main {
+    padding: 2%;
+    background-color: rgb(218, 216, 216);
+}
+
+.map-section h1 {
+    text-align: left;
+    margin-bottom: 2%;
+    font-size: 2.5rem;
+}
+
+.map-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    padding: 2%;
+    border-radius: 16px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.map-container {
+    width: 75%;
+    height: 450px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.heladeras-list {
+    margin-top: -5px;
+    width: 23%;
+}
+
+.heladeras-list ul {
+    list-style: none;
+    padding: 0;
+    max-height: 270px; 
+    overflow-y: auto;
+    margin-top: 5%;
+}
+.heladeras-list ul li {
+    margin-bottom: 10px;
+}
+
+.heladeras-list ul li a {
+    font-weight: bold;
+    color: #2b89f1;
+    text-decoration: none;
+}
+
+.heladeras-list ul li span {
+    display: block;
+    color: #7F8C8D;
+    margin-left: 31px;
+    margin-top: -10px;
+}
+
+.heladeras-list ul li img {
+    margin-right: 10px; 
+    width: 20px; 
+    height: auto;
+}
+
+.map-legend {
+    margin-top: 20px;
+    text-align: justify;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 1px 8px;
+}
+
+.map-legend p {
+    margin-top: 5px;
+}
+
+/* Ajustes generales */
+.content-container {
+    position: relative;
+    display: flex;
+}
+
+/* Estilo para la ventana emergente */
+.info-popup {
+    display: none;
+    position: absolute;
+    top: 0.01px; 
+    left: 0; 
+    width: 300px; 
+    bottom: 0; 
+    padding: 0.1px;
+    background-color: rgb(212, 212, 212);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 0 8px 8px 0; 
+    border-right: 1px solid #ccc; 
+    overflow-y: auto; 
+}
+
+.info-popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+/* Estilo para la imagen de portada */
+.popup-image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-top: 0; 
+}
+
+/* Estilo para el contenido de la información */
+.popup-info {
+    padding: 15px 15px;
+}
+
+/* Estilo para el titulo de la heladera */
+.popup-info h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: clamp(0.5rem, 5vw, 1.4rem);
+}
+
+.popup-info img {
+    margin-right: 10px; 
+    width: 18px; 
+    height: auto;
+}
+
+.beforelastOptionInfoPopup {
+    margin-top: 8px;
+}
+
+
+/* Estilo para la capacidad de la heladera */
+.capacity-bar {
+    justify-content: space-between;
+    width: 150px;
+    border-radius: 5px;
+    background-color: lightgray;
+    border: 2px solid black;
+    overflow: hidden;
+    margin-bottom: -2px;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: transparent;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: black;
+}
+
+progress[value]::-moz-progress-bar {
+    background-color: black;
+}
+
+.contact-info p, .location p, .documentation p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info img {
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+.location p, .location p, .documentation p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.location img {
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+.documentation p, .location p, .documentation p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.documentation img {
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+.documentation a {
+    color: black;
+    text-decoration: none;
+}
+
+.documentation a:visited,
+.documentation a:hover,
+.documentation a:active {
+    color: black;
+}
+
+.info-sections {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 2%;
+    border-radius: 16px;
+    margin-top: 2%;
+}
+
+.info-sections > div {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+footer {
+    background-color: #2b89f1;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer div {
+    width: 24%;
+}
+
+footer div p {
+    margin: 5px 0;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+footer .social-media a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 2.5em;
+}
+
+footer .social-media a:last-child {
+    margin-right: 0;
+}
+
+/* Estilos para el perfil de usuario */
+#user_circle {
+    align-items: center;
+    margin-left: -10px;
+    margin-top: -8px;
+    width: 86%;
+    height: 1.5rem;
+    background-color: #f9f9f9;
+}
+
+.profile-pic {
+    width: 2.25rem;
+    margin-left: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-pic > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* dropdown menu 1 */
+.dropdown-container_1 {
+    position: relative;
+    overflow: visible;
+}
+
+.dropdown-menu_1 {
+    position: absolute;
+    left: 0;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    top: calc(100% + 8px);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.dropdown-container_1:hover > .dropdown-menu_1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu_1.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+}
+
+.dropdown-menu_1 > a {
+    font-weight: 600;
+    padding: 0.5rem 0.5rem;
+    background-color: #292929;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.dropdown-menu_1 > a:hover {
+    background-color: #353535;
+}
+
+.dropdown-menu_1 > a > span:nth-of-type(2) {
+    color: #9ca3af;
+}
+
+/* Fin dropdown menu 1*/
+
+/* dropdown perfil de usuario */
+
+.profile-dropdown {
+    display: none;
+    margin-left: -7%;
+    width: 110%;
+    padding: 5px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.profile-dropdown > a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #9b9da0;
+    font-size: 0.87rem;
+    transition: 0.15s ease;
+}
+.profile-dropdown > a:hover {
+    background-color: #171717;
+    color: #f0f3f5;
+    text-decoration: none;
+}
+/* Selecciona el penúltimo elemento y aplica el estilo */
+.profile-dropdown > a:hover:nth-last-child(2) {
+    background-color: red;
+}
+
+/* fin Estilos para el perfil de usuario */
+
+/* dropdown Estilos para colaboraciones */
+.collaborations-dropdown {
+    width: 190%;
+    padding: 5px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.dropdown-container:hover:has(.collaborations-dropdown) > .collaborations-dropdown {
+    translate: 0 0;
+    opacity: 1;
+}
+.collaborations-dropdown > a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #9b9da0;
+    font-size: 0.87rem;
+    transition: 0.15s ease;
+}
+.collaborations-dropdown > a:hover {
+    background-color: #171717;
+    color: #f0f3f5;
+    text-decoration: none;
+}
+
+/* fin Estilos para colaboraciones */
+
+
+/* Botón de menú hamburguesa */
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    display: none; /* Ocultar en pantallas grandes */
+    margin-left: 10px;
+}
+
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 913px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .ong-logo {
+        margin-top: 2%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .buttons {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .custom-btn.btn {
+        width: auto;
+    }
+
+    #user_circle {
+        margin-top: 2%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+
+    /* Cambiar la disposición del mapa y lista de heladeras */
+    .map-section {
+        order: 2;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 300px;
+    }
+
+    .heladeras-list {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .heladeras-list ul {
+        margin-top: 15px;
+    }
+
+    .info-popup {
+        height: 299px;
+    }
+
+    /* Estilo para la imagen de portada */
+    .popup-image {
+        height: 100px;
+    }
+
+    /* Estilo para el titulo de la heladera */
+    .popup-info h2 {
+        margin-top: 0;
+        font-size: clamp(0.5rem, 5vw, 1.3rem)
+    }
+
+    /* Reorganizar las secciones de información */
+    .info-sections {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .info-sections > div:not(:first-child) {
+        margin-top: -10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+}

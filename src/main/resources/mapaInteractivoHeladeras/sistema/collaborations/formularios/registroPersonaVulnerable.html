@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Persona Vulerable</title>
+    <link rel="shortcut icon" href="../../images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_registroPersonaVulnerable.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+            
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+            </button>
+            
+            <div class="buttons">
+                <a href="../../login.html" style="text-decoration: none;">
+                    <button id="login_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Iniciar Sesión</span>
+                            <span class="text">Iniciar Sesión</span>
+                        </div>
+                    </button>
+                </a>
+                <a href="../../createAccount.html" style="text-decoration: none;">
+                    <button id="create_account_button" class="custom-btn btn">
+                        <div class="text-container">
+                            <span class="text">Crear Cuenta</span>
+                            <span class="text">Crear Cuenta</span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <!-- Boton de perfil -->
+            <div class="nav-right">
+                <div class="dropdown-container_1">
+                    <a href="#" id="user_circle" class="custom-btn btn" style="display: none;">
+                        <div class="text-container-user-profile">
+                            <span class="text-user-profile" id="profile_name">Usuario</span>
+                            <span class="text-user-profile" id="profile_name_2">Usuario</span>
+                            <span class="text-user-profile" id="profile_points">0 puntos</span>
+                            <span class="text-user-profile" id="profile_points_2">0 puntos</span>
+                        </div>
+                        <div class="profile-pic">
+                            <img id="profile_pic" src="../../images/users_images/imagen_registro.png" alt="Foto de Perfil">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu_1 profile-dropdown" id="profile_options">
+                        <a href="../../userOptions/myProfile.html">
+                            <span>Mi Perfil</span>
+                        </a>
+                        <a href="../../userOptions/premios.html">
+                            <span>Canjear Productos</span>
+                        </a>
+                        <a href="#" id="tarjetaSolicitada">
+                            <span>Solicitar tarjeta</span>
+                        </a>
+                        <a href="../../userOptions/historialColaboraciones.html" id="misColaboraciones">
+                            <span>Mis Colaboraciones</span>
+                        </a>
+                        <a href="../../userOptions/configAccount.html">
+                            <span>Configuración</span>
+                        </a>
+                        <a href="#">
+                            <span>Ayuda</span>
+                        </a>
+                        <a href="#" id="logout_button">
+                            <span>Cerrar Sesión</span>
+                        </a>
+                        <a href="#" id="change_rol" style="display: none;">
+                            <span>Cambiar a Rol</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li><a href="../colaboraciones.html" class="nav-link">Colaboraciones</a></li>
+            <li id="reportar_falla_heladera"><a href="../../Reportes/reportarFalla.html" class="nav-link">Reportar Falla de Heladera</a></li>
+            <li id="suscripcion_heladeras"><a href="../suscripcionHeladeras.html" class="nav-link">Suscripción Heladeras</a></li>
+            <li><a href="../../VisualizacionReportes/visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="colaboration-section" id="colaboration-section">
+            <button class="close-button" id="back_button">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            
+            <h1>Registrar Persona Vulnerable</h1>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="name_input" class="form-label">Nombre/s</label>
+                        <input type="text" class="form-control" id="name_input" placeholder="Nombre/s">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="surname_input" class="form-label">Apellido/s</label>
+                        <input type="text" class="form-control" id="surname_input" placeholder="Apellido/s">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="identity_input" class="form-label" id="identity_field">¿Tiene documentación?</label>
+                        <select class="form-control" id="identity_input" required>
+                            <option value="0">Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3" id="dni_type" style="display: none;">
+                        <label for="dni_type_input" class="form-label" id="dni_type_field">Tipo de Documentación</label>
+                        <select class="form-control" id="dni_type_input">
+                            <option value="0">Seleccione</option>
+                            <option value="DNI">DNI</option>
+                            <option value="LC">Libreta Cívica</option>
+                            <option value="LE">Libreta de Enrolamiento</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3" id="dni" style="display: none;">
+                        <label for="dni_input" class="form-label" id="dni_field">Número de Documento</label>
+                        <input type="number" class="form-control" id="dni_input" placeholder="Documento">
+                    </div>
+
+                    <div class="col-md-3" id="birthdate" style="display: none;">
+                        <label for="birthday_input" class="form-label" id="birthday_field">Nacimiento</label>
+                        <input type="date" class="form-control" id="birthday_input">
+                    </div>
+
+                    <div class="col-md-3" id="age" style="display: none;">
+                        <label for="age_input" class="form-label" id="age_field">Edad aproximada</label>
+                        <input type="number" class="form-control" id="age_input">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="address_confirm_input" class="form-label" id="address_confirm_field">¿Tiene domicilio fijo?</label>
+                        <select class="form-control" id="address_confirm_input" required>
+                            <option value="0">Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-9" id="domicilio" style="display: none;">
+                        <label for="address_input" class="form-label" id="address_field">Domicilio</label>
+                        <input type="text" class="form-control" id="address_input" placeholder="Ingrese: Calle Altura, Ciudad, País">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="contact_confirm_input" class="form-label" id="contact_confirm_field">¿Tiene algún medio de contacto?</label>
+                        <select class="form-control" id="contact_confirm_input" required>
+                            <option value="0">Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2" id="contact_type" style="display: none;">
+                        <label for="contact_type_input" class="form-label" id="contact_field">Medio</label>
+                        <select class="form-control" id="contact_type_input">
+                            <option value="0">Seleccione</option>
+                            <option value="Mail">Mail</option>
+                            <option value="Teléfono">Teléfono</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2" id="contact_phone_code" style="display: none;">
+                        <label for="contact_code_input" class="form-label" id="contact_code_field">Código</label>
+                        <select class="form-control" id="contact_code_input" required>
+                            <option value="0">Seleccione</option>
+                            <option value="+54">Argentina (+54)</option>
+                            <option value="+55">Brasil (+55)</option>
+                            <option value="+56">Chile (+56)</option>
+                            <option value="+598">Uruguay (+598)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4" id="contact" style="display: none;">
+                        <label for="campo_input" class="form-label" id="campo_field">Contacto</label>
+                        <input type="text" class="form-control" id="campo_input" placeholder="Campo">
+                    </div>
+
+                    <div class="col-md-1" id="botones_apps" style="display: none;">
+                        <button id="whatsapp_button" class="toggle-button">
+                            <span id="whatsapp_logo"><img src="../../images/info_icons/whatsapp_disabled.png" alt="WhatsApp disabled"></span>
+                        </button>
+
+                        <button id="telegram_button" class="toggle-button">
+                            <span id="telegram_logo"><img src="../../images/info_icons/telegram_disabled.png" alt="Telegram disabled"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3" id="add_contact_button" style="display: none;">
+                        <button id="add-contact-button">+ Agregar opción de contacto</button>
+                    </div>
+
+                    <div class="col-md-2" id="contact_type_2" style="display: none;">
+                        <label for="contact_type_input_2" class="form-label" id="contact_field_2">Medio</label>
+                        <select class="form-control" id="contact_type_input_2" disabled>
+                            <option value="0">Seleccione</option>
+                            <option value="Mail">Mail</option>
+                            <option value="Teléfono">Teléfono</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2" id="contact_phone_code_2" style="display: none;">
+                        <label for="contact_code_input_2" class="form-label" id="contact_code_field_2">Código</label>
+                        <select class="form-control" id="contact_code_input_2" required>
+                            <option value="0">Seleccione</option>
+                            <option value="+54">Argentina (+54)</option>
+                            <option value="+55">Brasil (+55)</option>
+                            <option value="+56">Chile (+56)</option>
+                            <option value="+598">Uruguay (+598)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4" id="contact_2" style="display: none;">
+                        <label for="campo_input_2" class="form-label" id="campo_field_2">Contacto</label>
+                        <input type="text" class="form-control" id="campo_input_2" placeholder="Campo">
+                    </div>
+
+                    <div class="col-md-1" id="botones_apps_2" style="display: none;">
+                        <button id="whatsapp_button_2" class="toggle-button-2">
+                            <span id="whatsapp_logo"><img src="../../images/info_icons/whatsapp_disabled.png" alt="WhatsApp disabled" id="whatsapp_logo"></span>
+                        </button>
+
+                        <button id="telegram_button_2" class="toggle-button-2">
+                            <span id="telegram_logo"><img src="../../images/info_icons/telegram_disabled.png" alt="Telegram disabled"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3" id="list_pers_vuln" style="display: none;">
+                        <button id="list_pers_vuln_button" class="btn btn-warning mb-4" type="button">Listar Personas Vulnerables del Sistema</button>
+                    </div>
+                    <div class="col-md-3" id="tutor" style="display: none;">
+                        <label for="tutor_input" class="form-label" id="tutor_field">Código del Tutor</label>
+                        <input type="text" class="form-control" id="tutor_input" placeholder="Código del Tutor">
+                    </div>
+                </div>
+            </form>
+            <button id="create_account_vul_button" class="btn btn-primary" type="submit" disabled>Registrar Persona Vulnerable</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+
+    <script src="scripts_registroPersonaVulnerable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

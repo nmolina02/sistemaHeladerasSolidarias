@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="shortcut icon" href="images/icono/icono.ico">
+    <link rel="stylesheet" href="styles_createAccount.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" id="main_icon"><img src="images/principal/logo.png" alt="Logo" class="ong-logo"></a>
+            </div>
+
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i> <!-- Ícono de menú hamburguesa -->
+            </button>
+        </div>
+    </header>
+
+    <nav>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="collaborations/colaboraciones.html" class="nav-link">Colaboraciones</a></li>
+            <li id="reportar_falla_heladera"><a href="Reportes/reportarFalla.html" class="nav-link">Reportar Falla de Heladera</a></li>
+            <li id="suscripcion_heladeras"><a href="collaborations/suscripcionHeladeras.html" class="nav-link">Suscripción Heladeras</a></li>
+            <li><a href="VisualizacionReportes/visualizarReportes.html" class="nav-link">Visualizar Reportes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="create-account-section" id="create-account-section">
+            <button class="close-button" id="back_button">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            
+            <h1>Formulario de Registro</h1>
+            <form>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="user_type_input" class="form-label" id="user_type_field">Seleccione el tipo de Usuario</label>
+                        <select class="form-control" id="user_type_input" required>
+                            <option value="0">Seleccione</option>
+                            <option value="Persona Humana">Persona Humana</option>
+                            <option value="Persona Jurídica">Persona Jurídica</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6" id="name" style="display: none;">
+                        <label for="name_input" class="form-label" id="name_field">Nombre/s</label>
+                        <input type="text" class="form-control" id="name_input" placeholder="Nombre/s">
+                    </div>
+                    
+                    <div class="col-md-6" id="surname" style="display: none;">
+                        <label for="surname_input" class="form-label" id="surname_field">Apellido/s</label>
+                        <input type="text" class="form-control" id="surname_input" placeholder="Apellido/s">
+                    </div>
+
+                    <div class="col-md-3" id="razonSocial" style="display: none;">
+                        <label for="razon_social_input" class="form-label" id="razon_social_field">Razón Social</label>
+                        <input type="text" class="form-control" id="razon_social_input" placeholder="Razón Social">
+                    </div>
+
+                    <div class="col-md-3" id="organizationType" style="display: none;">
+                        <label for="organization_type_input" class="form-label" id="organization_type_field">Tipo de Organización</label>
+                        <select class="form-control" id="organization_type_input">
+                            <option value="0">Seleccione</option>
+                            <option value="Gubernamental">Gubernamental</option>
+                            <option value="ONG">ONG</option>
+                            <option value="Empresa">Empresa</option>
+                            <option value="Institucion">Institución</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3" id="rubro" style="display: none;">
+                        <label for="rubro_input" class="form-label" id="rubro_field">Rubro</label>
+                        <input type="text" class="form-control" id="rubro_input" placeholder="Rubro">
+                    </div>
+
+                    <div class="col-md-3" id="cuit" style="display: none;">
+                        <label for="cuit_input" class="form-label" id="rubro_field">Cuit</label>
+                        <input type="number" class="form-control" id="cuit_input" placeholder="Cuit">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2" id="dni_type" style="display: none;">
+                        <label for="dni_type_input" class="form-label" id="dni_type_field">Tipo de Documentación</label>
+                        <select class="form-control" id="dni_type_input">
+                            <option value="0">Seleccione</option>
+                            <option value="DNI">DNI</option>
+                            <option value="LC">Libreta Cívica</option>
+                            <option value="LE">Libreta de Enrolamiento</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2" id="dni" style="display: none;">
+                        <label for="dni_input" class="form-label" id="dni_field">Número de Documento</label>
+                        <input type="number" class="form-control" id="dni_input" placeholder="Documento">
+                    </div>
+
+                    <div class="col-md-2" id="birthdate" style="display: none;">
+                        <label for="birthday_input" class="form-label" id="birthday_field">Nacimiento</label>
+                        <input type="date" class="form-control" id="birthday_input">
+                    </div>
+
+                    <div class="col-md-6" id="domicilio" style="display: none;">
+                        <label for="address_input" class="form-label" id="address_field">Domicilio</label>
+                        <input type="text" class="form-control" id="address_input" placeholder="Ingrese: Calle Altura, Ciudad, País">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3" id="contact_type" style="display: none;">
+                        <label for="contact_type_input" class="form-label" id="contact_field">Medio</label>
+                        <select class="form-control" id="contact_type_input">
+                            <option value="0">Seleccione</option>
+                            <option value="Mail">Mail</option>
+                            <option value="Teléfono">Teléfono</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3" id="contact_phone_code" style="display: none;">
+                        <label for="contact_code_input" class="form-label" id="contact_code_field">Código</label>
+                        <select class="form-control" id="contact_code_input" required>
+                            <option value="0">Seleccione</option>
+                            <option value="+54">Argentina (+54)</option>
+                            <option value="+55">Brasil (+55)</option>
+                            <option value="+56">Chile (+56)</option>
+                            <option value="+598">Uruguay (+598)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-5" id="contact" style="display: none;">
+                        <label for="campo_input" class="form-label" id="campo_field">Contacto</label>
+                        <input type="text" class="form-control" id="campo_input" placeholder="Campo">
+                    </div>
+
+                    <div class="col-md-1" id="botones_apps" style="display: none;">
+                        <button id="whatsapp_button" class="toggle-button">
+                            <span id="whatsapp_logo"><img src="images/info_icons/whatsapp_disabled.png" alt="WhatsApp disabled"></span>
+                        </button>
+
+                        <button id="telegram_button" class="toggle-button">
+                            <span id="telegram_logo"><img src="images/info_icons/telegram_disabled.png" alt="Telegram disabled"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3" id="contact_type_2" style="display: none;">
+                        <label for="contact_type_input_2" class="form-label" id="contact_field_2">Medio</label>
+                        <select class="form-control" id="contact_type_input_2" disabled>
+                            <option value="0">Seleccione</option>
+                            <option value="Mail">Mail</option>
+                            <option value="Teléfono">Teléfono</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3" id="contact_phone_code_2" style="display: none;">
+                        <label for="contact_code_input_2" class="form-label" id="contact_code_field_2">Código</label>
+                        <select class="form-control" id="contact_code_input_2" required>
+                            <option value="0">Seleccione</option>
+                            <option value="+54">Argentina (+54)</option>
+                            <option value="+55">Brasil (+55)</option>
+                            <option value="+56">Chile (+56)</option>
+                            <option value="+598">Uruguay (+598)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-5" id="contact_2" style="display: none;">
+                        <label for="campo_input_2" class="form-label" id="campo_field_2">Contacto</label>
+                        <input type="text" class="form-control" id="campo_input_2" placeholder="Campo">
+                    </div>
+
+                    <div class="col-md-1" id="botones_apps_2" style="display: none;">
+                        <button id="whatsapp_button_2" class="toggle-button-2">
+                            <span id="whatsapp_logo"><img src="images/info_icons/whatsapp_disabled.png" alt="WhatsApp disabled" id="whatsapp_logo"></span>
+                        </button>
+
+                        <button id="telegram_button_2" class="toggle-button-2">
+                            <span id="telegram_logo"><img src="images/info_icons/telegram_disabled.png" alt="Telegram disabled"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3" id="add_contact_button" style="display: none;">
+                        <button id="add-contact-button">+ Agregar opción de contacto</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4" id="username" style="display: none;">
+                        <label for="username_input" class="form-label" id="username_field">Usuario</label>
+                        <input type="text" class="form-control" id="username_input" placeholder="Usuario">
+                    </div>
+
+                    <div class="col-md-4" id="password" style="display: none;">
+                        <label for="password_input" class="form-label" id="password_field">Contraseña</label>
+                        <div style="position: relative;">
+                            <input type="password" class="form-control" id="password_input" placeholder="Contraseña">
+                            <button type="button" id="toggle_password" class="btn-visibility">
+                                <i class="fas fa-eye" id="password_icon"></i>
+                            </button>
+                        </div>
+                        <div class="info-box" id="password_info" style="display: none;">
+                            La contraseña debe contener al menos 8 caracteres
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" id="password_confirm" style="display: none;">
+                        <label for="password_confirm_input" class="form-label" id="password_confirm_field">Repetir Contraseña</label>
+                        <input type="password" class="form-control" id="password_confirm_input" placeholder="Contraseña">
+                    </div>
+                </div>
+            </form>
+            <button id="create_account_button" class="btn btn-primary" type="submit" disabled>Crear Cuenta</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>        
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="scripts_createAccount.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

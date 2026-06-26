@@ -1,0 +1,5 @@
+DNI,12345678,Juan,Perez,juan.perez@example.com,15/01/2023,DINERO,500
+DNI,12345678,Juan,Perez,juan.perez@example.com,20/02/2023,DONACION_VIANDAS,50
+DNI,87654321,Maria,Gomez,maria.gomez@example.com,10/03/2023,DINERO,1000
+DNI,87654321,Maria,Gomez,maria.gomez@example.com,05/04/2023,REDISTRIBUCION_VIANDAS,30
+DNI,11223344,Carlos,Rodriguez,carlos.rodriguez@example.com,12/05/2023,ENTREGA_TARJETAS,0
